@@ -2,6 +2,11 @@
   "compilerOptions": {
     "target": "es2017",
     "types": ["node", "jest"],
+
+    "paths": {  
+      "@core": ["libs/core"],
+      "@bank": ["libs/bank"],
+      },
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -12,7 +17,7 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "baseUrl": ".",
+    "baseUrl": "src",
     "noFallthroughCasesInSwitch": true,
     "outDir": "./dist"
   },

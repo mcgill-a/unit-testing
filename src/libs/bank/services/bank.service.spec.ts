@@ -1,5 +1,4 @@
-import { BackendService } from 'app/core/backend/backend.service';
-import { Account } from 'app/core/backend/types/account';
+import { Account, BackendService } from '@core';
 import { Subject } from 'rxjs';
 import { AccountService } from './account.service';
 import { BankService } from './bank.service';

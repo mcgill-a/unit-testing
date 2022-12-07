@@ -1,4 +1,4 @@
-import { Account } from 'app/core/backend/types/account';
+import { Account } from '@core';
 import { Observable, ReplaySubject } from 'rxjs';
 
 export class AccountService {
@@ -6,5 +6,9 @@ export class AccountService {
 
 	public get current(): Observable<Account | undefined> {
 		return this._current.asObservable();
+	}
+
+	public login(id: string): void {
+		console.log("login()", id);
 	}
 }

@@ -1,6 +1,5 @@
-import { BackendService } from 'app/core/backend/backend.service';
-import { Account } from 'app/core/backend/types/account';
-import { AccountService } from './account.service';
+import { Account, BackendService } from "@core";
+import { AccountService } from "./account.service";
 
 export class BankService {
 	private account?: Account;

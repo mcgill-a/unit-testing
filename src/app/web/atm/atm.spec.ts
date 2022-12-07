@@ -1,13 +1,15 @@
-import { BankService } from 'app/services/bank.service';
+import { AccountService, BankService } from '@bank';
 import { ATM } from './atm';
 
 describe('ATM', () => {
 	let atm: ATM;
 	let bankService: Partial<BankService>;
+	let accountService: Partial<AccountService>;
 
 	beforeEach(() => {
 		bankService = { deposit: jest.fn(), withdraw: jest.fn() };
-		atm = new ATM(<BankService>bankService);
+		accountService = { login: jest.fn() };
+		atm = new ATM(<BankService>bankService, <AccountService>accountService);
 	});
 
 	it('should call bank service deposit', () => {
@@ -24,5 +26,12 @@ describe('ATM', () => {
 		atm.withdraw(amount);
 
 		expect(bankService.withdraw).toHaveBeenCalledWith(amount);
+	});
+
+	it('should call account service login', () => {
+		const id = 'foo';
+		atm.login(id);
+
+		expect(accountService.login).toHaveBeenCalledWith(id);
 	});
 });

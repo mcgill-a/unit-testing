@@ -1,6 +1,6 @@
-import { User } from './types/user';
+import { User } from '../types/user';
 import { delay, of } from 'rxjs';
-import { Account } from './types/account';
+import { Account } from '../types/account';
 
 export class BackendService {
 	public readonly user = {
